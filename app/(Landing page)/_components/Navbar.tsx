@@ -26,7 +26,7 @@ const NavBar: React.FC = () => {
           <a
             key={link}
             href="#"
-            className="text-gray-600 hover:text-blue-600 font-medium transition duration-300"
+            className="text-gray-600 hover:text-purple-600 font-medium transition duration-300"
           >
             {link}
           </a>
@@ -35,7 +35,7 @@ const NavBar: React.FC = () => {
 
       {/* Auth Buttons */}
       <div className="flex items-center space-x-4">
-        <button className="text-gray-600 hover:text-blue-600 font-medium transition duration-300">
+        <button className="text-gray-600 hover:text-purple-600 font-medium transition duration-300">
           Contact Sales
         </button>
         <SignedOut>

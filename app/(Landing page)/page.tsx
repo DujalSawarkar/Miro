@@ -30,7 +30,7 @@ const Home = () => {
             content="A single, AI-powered collaboration platform for teams."
           />
           {/* </Head> */}
-          <Banner />
+          {/* <Banner /> */}
           <NavBar />
           <MainContent />
           <ChatBubbles />

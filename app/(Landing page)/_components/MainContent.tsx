@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { SignInButton } from "@clerk/clerk-react";
 import { useAuth } from "@clerk/nextjs";
 import { useConvexAuth } from "convex/react";
+import Link from "next/link";
 
 const MainContent: React.FC = () => {
   const { isAuthenticated, isLoading } = useConvexAuth();
@@ -28,7 +29,9 @@ const MainContent: React.FC = () => {
         )}
         {!isAuthenticated && !isLoading && (
           <SignInButton mode="modal">
-            <Button>Get Started</Button>
+            <Button>
+              <Link href="/dashboard">Get Started</Link>
+            </Button>
           </SignInButton>
         )}
       </div>
