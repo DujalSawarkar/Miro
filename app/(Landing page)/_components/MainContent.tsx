@@ -24,13 +24,17 @@ const MainContent: React.FC = () => {
         )}
         {isAuthenticated && (
           <button className="bg-purple-600 text-white px-4 py-2 rounded-lg shadow-lg">
-            Get Started
+            <Link href="./dashboard">Get Started</Link>
           </button>
         )}
         {!isAuthenticated && !isLoading && (
-          <SignInButton mode="modal">
+          <SignInButton
+            mode="modal"
+            afterSignUpUrl="/dashboard"
+            afterSignInUrl="/dashboard"
+          >
             <Button>
-              <Link href="/dashboard">Get Started</Link>
+              <Link href="./dashboard">Get Started</Link>
             </Button>
           </SignInButton>
         )}
