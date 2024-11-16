@@ -33,9 +33,7 @@ const MainContent: React.FC = () => {
             afterSignUpUrl="/dashboard"
             afterSignInUrl="/dashboard"
           >
-            <Button>
-              <Link href="./dashboard">Get Started</Link>
-            </Button>
+            <Button>Get</Button>
           </SignInButton>
         )}
       </div>

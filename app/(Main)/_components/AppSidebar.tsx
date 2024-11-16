@@ -1,49 +1,44 @@
-import { Calendar, Home, Inbox, Plus, Search, Settings } from "lucide-react";
+import { Sidebar, SidebarContent } from "@/components/ui/sidebar";
+import Profile from "./AppSidebarComponents/Profile";
+import { SidebarSpaces } from "./AppSidebarComponents/Space";
+import { List } from "./AppSidebarComponents/List";
+// import { Organization } from "@clerk/nextjs/server";
+import { OrganizationSwitcher } from "@clerk/nextjs";
 
-import {
-  Sidebar,
-  SidebarContent,
-  SidebarGroup,
-  SidebarGroupContent,
-  SidebarGroupLabel,
-  SidebarMenu,
-  SidebarMenuButton,
-  SidebarMenuItem,
-} from "@/components/ui/sidebar";
-import { DropMenu } from "./DropMenu";
-import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
-import { CreateOrganization } from "@clerk/clerk-react";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
-import { Button } from "@/components/ui/button";
 export function AppSidebar() {
   return (
-    <Sidebar>
-      <SidebarContent>
-        <SidebarGroup>
-          <SidebarGroupLabel>hhhh</SidebarGroupLabel>
-          <SidebarGroupContent>
-            <SidebarMenu>
-              {/* hhh */}
-              <DropdownMenu>
-                <DropdownMenuTrigger asChild>
-                  <Button variant="outline">
-                    <Plus size={24} />
-                  </Button>
-                </DropdownMenuTrigger>
-                <DropdownMenuContent className="p-0 bg-transparent border-none">
-                  <CreateOrganization />
-                </DropdownMenuContent>
-              </DropdownMenu>
+    <Sidebar className="bg-purple-600 shadow-lg border-r border-gray-200">
+      <SidebarContent className="p-4 space-y-6">
+        {/* User Profile Section */}
+        <Profile />
 
-              {/* hhh */}
-              <DropMenu />
-            </SidebarMenu>
-          </SidebarGroupContent>
-        </SidebarGroup>
+        {/* List Section */}
+        <List />
+
+        {/* Spaces Section */}
+        <SidebarSpaces />
+
+        <OrganizationSwitcher
+          hidePersonal
+          appearance={{
+            elements: {
+              rootBox: {
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                width: "100%",
+              },
+              organizationSwitcherTrigger: {
+                padding: "6px",
+                width: "100%",
+                borderRadius: "8px",
+                border: "1px solid #E5E7EB",
+                justifyContent: "space-between",
+                backgroundColor: "white",
+              },
+            },
+          }}
+        />
       </SidebarContent>
     </Sidebar>
   );

@@ -22,13 +22,7 @@ export function DropMenu() {
       <DropdownMenuTrigger asChild>
         <Button variant="outline">See Organisations</Button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent className="p-0 bg-transparent border-none">
-        <OrganizationList
-          afterCreateOrganizationUrl="/dashboard/:slug"
-          afterSelectPersonalUrl="/user/:id"
-          afterSelectOrganizationUrl="/dashboard/:slug"
-        />
-      </DropdownMenuContent>
+      <DropdownMenuContent className="p-0 bg-transparent border-none"></DropdownMenuContent>
     </DropdownMenu>
   );
 }
