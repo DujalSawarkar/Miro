@@ -6,35 +6,36 @@ import {
 } from "@/components/ui/sidebar";
 import { CreateOrganization } from "@clerk/nextjs";
 import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuTrigger,
-} from "@radix-ui/react-dropdown-menu";
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
 import { Plus } from "lucide-react"; // Assuming you're using lucide-react for icons
 
 export function SidebarSpaces() {
   return (
-    <SidebarGroup className="pt-4 px-4">
-      <SidebarGroupLabel className="text-xs font-semibold text-gray-500 mb-2">
-        Spaces
-      </SidebarGroupLabel>
-
+    <div className="pt-4 ">
       <SidebarGroupContent>
-        <DropdownMenu>
-          <DropdownMenuTrigger asChild>
+        {/* Dialog for Creating an Organization */}
+        <Dialog>
+          {/* Trigger */}
+          <DialogTrigger asChild>
             <Button
-              variant="outline"
-              className="w-full flex justify-center items-center gap-1 p-2 rounded-lg border-gray-200 hover:border-purple-500"
+              // variant="outline"
+              className="w-full flex justify-center items-center gap-1 rounded-lg  hover:border-purple-500"
             >
-              <Plus size={20} className="text-gray-700" />
+              <Plus size={20} className="text-white" />
             </Button>
-          </DropdownMenuTrigger>
+          </DialogTrigger>
 
-          <DropdownMenuContent className="p-0 bg-transparent border-none">
+          {/* Dialog Content */}
+          <DialogContent className="p-0 bg-transparent border-none flex justify-center items-center">
             <CreateOrganization />
-          </DropdownMenuContent>
-        </DropdownMenu>
+          </DialogContent>
+        </Dialog>
       </SidebarGroupContent>
-    </SidebarGroup>
+    </div>
   );
 }

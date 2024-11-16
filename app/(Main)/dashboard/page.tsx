@@ -10,7 +10,7 @@ const Dashboard = () => {
       <div>
         <SidebarProvider>
           <AppSidebar />
-          <SidebarTrigger />
+          {/* <SidebarTrigger /> */}
         </SidebarProvider>
       </div>
       <TopNavBar />
