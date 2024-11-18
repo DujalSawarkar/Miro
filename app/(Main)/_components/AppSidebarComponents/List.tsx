@@ -6,6 +6,7 @@ import {
   SidebarMenuItem,
 } from "@/components/ui/sidebar";
 import { Home, Clock, Star } from "lucide-react";
+import Link from "next/link";
 
 export function List() {
   return (
@@ -13,12 +14,16 @@ export function List() {
       <SidebarGroupContent>
         <SidebarMenu className="space-y-2">
           {/* Home */}
-          <SidebarMenuItem className="mb-1">
-            <SidebarMenuButton className="flex items-center gap-3 p-3 rounded-lg transition-colors duration-200 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-opacity-50">
-              <Home size={16} className="text-gray-700" />
-              <span className="text-sm font-medium text-gray-700">Boards</span>
-            </SidebarMenuButton>
-          </SidebarMenuItem>
+          <Link href="/dashboard/Boards">
+            <SidebarMenuItem className="mb-1">
+              <SidebarMenuButton className="flex items-center gap-3 p-3 rounded-lg transition-colors duration-200 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-opacity-50">
+                <Home size={16} className="text-gray-700" />
+                <span className="text-sm font-medium text-gray-700">
+                  Boards
+                </span>
+              </SidebarMenuButton>
+            </SidebarMenuItem>
+          </Link>
           {/* 
           <SidebarMenuItem className="mb-1">
 
