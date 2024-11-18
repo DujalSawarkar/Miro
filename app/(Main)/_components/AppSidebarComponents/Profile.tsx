@@ -14,10 +14,10 @@ const Profile = () => {
   const { user } = useUser(); // Fetch the logged-in user data
 
   return (
-    <div className="border-b pb-2 pt-4">
+    <div className="border-b pb-2 pt-4 w-full">
       <Dialog>
         {/* Trigger */}
-        <DialogTrigger asChild className="hover:bg-purple-100 ">
+        <DialogTrigger asChild>
           <div className="flex w-full items-center gap-4 cursor-pointer rounded-lg  transition-all ease-in-out duration-200">
             <div className="flex flex-col">
               <span className="text-xl font-semibold text-gray-800">

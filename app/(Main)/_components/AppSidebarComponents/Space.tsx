@@ -20,17 +20,11 @@ export function SidebarSpaces() {
       <SidebarGroupContent>
         {/* Dialog for Creating an Organization */}
         <Dialog>
-          {/* Trigger */}
           <DialogTrigger asChild>
-            <Button
-              // variant="outline"
-              className="w-full flex justify-center items-center gap-1 rounded-lg  hover:border-purple-500"
-            >
+            <Button className="w-full flex justify-center items-center gap-1 rounded-lg  hover:border-purple-500">
               <Plus size={20} className="text-white" />
             </Button>
           </DialogTrigger>
-
-          {/* Dialog Content */}
           <DialogContent className="p-0 bg-transparent border-none flex justify-center items-center">
             <CreateOrganization />
           </DialogContent>

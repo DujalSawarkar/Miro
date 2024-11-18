@@ -16,17 +16,17 @@ export function List() {
           <SidebarMenuItem className="mb-1">
             <SidebarMenuButton className="flex items-center gap-3 p-3 rounded-lg transition-colors duration-200 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-opacity-50">
               <Home size={16} className="text-gray-700" />
-              <span className="text-sm font-medium text-gray-700">Home</span>
+              <span className="text-sm font-medium text-gray-700">Boards</span>
             </SidebarMenuButton>
           </SidebarMenuItem>
-
+          {/* 
           <SidebarMenuItem className="mb-1">
-            {/* Recent */}
+
             <SidebarMenuButton className="flex items-center gap-3 p-3 rounded-lg transition-colors duration-200 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-opacity-50">
               <Clock size={16} className="text-gray-700" />
               <span className="text-sm font-medium text-gray-700">Recent</span>
             </SidebarMenuButton>
-          </SidebarMenuItem>
+          </SidebarMenuItem> */}
 
           {/* Starred */}
           <SidebarMenuItem>

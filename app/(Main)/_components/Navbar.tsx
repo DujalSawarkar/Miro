@@ -6,10 +6,10 @@ import InviteButton from "./InviteButton";
 
 export function TopNavBar() {
   return (
-    <div className="flex items-center justify-between p-4  shadow-md h-20 w-full bg-transparent">
+    <div className="flex items-center justify-between p-4  shadow-md h-20 w-full bg-white">
       {/* Logo and FREE Badge */}
       <div className="flex items-center gap-2">
-        <span className="text-xl font-bold text-gray-800">miro</span>
+        <span className="text-xl font-bold text-gray-800">Miro Clone</span>
         <span className="text-xs font-semibold text-gray-500 bg-gray-100 px-2 py-0.5 rounded">
           FREE
         </span>

@@ -23,21 +23,23 @@ export function AppSidebar() {
             appearance={{
               elements: {
                 rootBox: {
+                  color: "white",
                   display: "flex",
                   justifyContent: "center",
                   alignItems: "center",
                   width: "100%",
                 },
+
                 organizationSwitcherTrigger: {
                   color: "white",
                   padding: "8px",
-                  paddingRight: "30px",
-                  paddingLeft: "30px",
+                  paddingRight: "28px",
+                  paddingLeft: "28px",
                   borderRadius: "6px",
                   backgroundColor: "#874ced",
                   border: "1px solid #E5E7EB",
                   transition: "all 0.2s ease-in-out",
-                  ":hover": {
+                  hover: {
                     backgroundColor: "#F3E8FF", // Light purple background
                     color: "#6B21A8", // Purple text on hover
                   },
