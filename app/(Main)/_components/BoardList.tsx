@@ -17,7 +17,7 @@ const BoardList: React.FC<BoardListProps> = ({ boards }) => {
     <div className="bg-white shadow rounded-lg overflow-hidden">
       <table className="w-full table-auto border-collapse">
         <thead>
-          <tr className="bg-gray-100 border-b">
+          <tr className=" border-b">
             <th className="text-left px-4 py-3 font-medium">Board</th>
             <th className="text-left px-4 py-3 font-medium">Organization ID</th>
             <th className="text-left px-4 py-3 font-medium">Author</th>

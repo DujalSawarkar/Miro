@@ -1,45 +1,23 @@
 import React from "react";
 import BoardList from "./BoardList";
 import { Button } from "@/components/ui/button";
-import { Plus } from "lucide-react";
-
-interface Board {
-  title: string;
-  orgId: string; // Required
-  authorId: string; // Required
-  authorName: string;
-  imageUrl: string;
-  viewOnly?: boolean; // Optional
-}
-
-const boards: Board[] = [
-  {
-    title: "Untitled",
-    orgId: "org123", // Add required orgId
-    authorId: "auth123", // Add required authorId
-    authorName: "Dujal Sawarkar",
-    imageUrl: "/Boardimgs/1.svg",
-  },
-  {
-    title: "SIH",
-    orgId: "org456",
-    authorId: "auth456",
-    authorName: "Aishwarya Patil",
-    imageUrl: "/Boardimgs/2.svg",
-    viewOnly: true,
-  },
-  {
-    title: "Untitled",
-    orgId: "org789",
-    authorId: "auth789",
-    authorName: "Dujal Sawarkar",
-    imageUrl: "/Boardimgs/3.svg",
-  },
-];
+import { Divide, Plus } from "lucide-react";
+import { api } from "@/convex/_generated/api"; // Convex-generated API import
+import { useQuery } from "convex/react";
+import { useOrganization } from "@clerk/nextjs";
+import { Spinner } from "@/components/Spinner";
 
 const BoardsPage: React.FC = () => {
+  const { organization } = useOrganization(); // Get organization from Clerk
+
+  // Check if organization exists before using `useQuery`
+  const organizationId = organization?.id ?? "";
+
+  // Fetch boards from Convex
+  const boards = useQuery(api.board.get, { organizationId });
+  console.log(boards);
   return (
-    <div className="  p-6">
+    <div className="p-6">
       {/* Header Section */}
       <div className="flex justify-between items-center mb-6">
         <h1 className="text-2xl font-semibold">Boards in this Team</h1>
@@ -70,7 +48,14 @@ const BoardsPage: React.FC = () => {
       </div>
 
       {/* Boards List */}
-      <BoardList boards={boards} />
+      {boards ? (
+        <BoardList boards={boards} />
+      ) : (
+        // <Loader
+        <div className="h-[full] w-[full] flex justify-center items-center">
+          <Spinner />
+        </div>
+      )}
     </div>
   );
 };

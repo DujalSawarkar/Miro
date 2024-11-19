@@ -1,5 +1,15 @@
-import { mutation } from "./_generated/server";
+import { mutation, query } from "./_generated/server";
 import { v } from "convex/values";
+
+export interface Board {
+  _id: string; // Assuming Convex generates an ID for each document
+  _creationTime: number; // Assuming Convex tracks the creation time for each document
+  title: string;
+  orgId: string;
+  authorId: string;
+  authorName: string;
+  imageUrl: string;
+}
 
 const images = [
   "/Boardimgs/1.svg",
@@ -35,5 +45,21 @@ export const create = mutation({
     });
 
     return board;
+  },
+});
+
+export const get = query({
+  args: { organizationId: v.string() || undefined },
+  handler: async (ctx, { organizationId }) => {
+    const boards = await ctx.db
+      .query("boards")
+      .filter((q) => q.eq(q.field("orgId"), organizationId)) // Use Convex's query builder syntax
+      .collect();
+
+    if (boards.length === 0) {
+      throw new Error("No boards found for this organization.");
+    }
+    console.log(boards);
+    return boards;
   },
 });
