@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import BoardList from "./BoardList";
 import { Button } from "@/components/ui/button";
@@ -16,6 +18,10 @@ const BoardsPage: React.FC = () => {
   // Fetch boards from Convex
   const boards = useQuery(api.board.get, { organizationId });
   console.log(boards);
+  if (boards == null) {
+    console.log("No Boards");
+    return <div>hhhh no board</div>;
+  }
   return (
     <div className="p-6">
       {/* Header Section */}

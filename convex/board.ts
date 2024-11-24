@@ -57,6 +57,7 @@ export const get = query({
       .collect();
 
     if (boards.length === 0) {
+      return null;
       throw new Error("No boards found for this organization.");
     }
     console.log(boards);

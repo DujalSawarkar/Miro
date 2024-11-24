@@ -1,3 +1,4 @@
+import { useOrganization } from "@clerk/nextjs";
 import React from "react";
 
 interface Board {
@@ -13,13 +14,15 @@ interface BoardListProps {
 }
 
 const BoardList: React.FC<BoardListProps> = ({ boards }) => {
+  const { organization } = useOrganization();
+  console.log(organization?.name);
   return (
     <div className="bg-white shadow rounded-lg overflow-hidden">
       <table className="w-full table-auto border-collapse">
         <thead>
           <tr className=" border-b">
             <th className="text-left px-4 py-3 font-medium">Board</th>
-            <th className="text-left px-4 py-3 font-medium">Organization ID</th>
+            <th className="text-left px-4 py-3 font-medium">Organization</th>
             <th className="text-left px-4 py-3 font-medium">Author</th>
             <th className="text-left px-4 py-3 font-medium">Author ID</th>
           </tr>
@@ -38,7 +41,7 @@ const BoardList: React.FC<BoardListProps> = ({ boards }) => {
               </td>
 
               {/* Organization ID */}
-              <td className="px-4 py-3 text-gray-600">{board.orgId}</td>
+              <td className="px-4 py-3 text-gray-600">{organization?.name}</td>
 
               {/* Author */}
               <td className="px-4 py-3 text-gray-600">{board.authorName}</td>

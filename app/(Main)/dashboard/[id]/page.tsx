@@ -43,9 +43,10 @@ const BoardTemplates = () => {
   ];
 
   if (id == "Boards") {
+    // if(board)
     return (
       <div>
-        <div className="flex gap-4 bg-gray-200 p-6 rounded-lg">
+        <div className="flex gap-4 bg-gray-200 p-6 rounded-lg ">
           {templates.map((template, index) => (
             <div
               key={index}
